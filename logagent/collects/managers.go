@@ -26,13 +26,13 @@ func UpdateManagers() {
 	for _, config := range conf.EtcdInfos {
 		fm := logManagers[config.Name]
 		if fm == nil {
-			fm, err = newFileManager(config.Name, config.Path, config.Kafka...)
+			fm, err = newFileManager(config.Name, config.Path, config.MqHosts...)
 			if err != nil {
 				logrus.Errorf("new file manager error: %v, config: %v", err, config)
 				continue
 			}
 		} else {
-			err = fm.update(config.Name, config.Path, config.Kafka...)
+			err = fm.update(config.Name, config.Path, config.MqHosts...)
 			if err != nil {
 				logrus.Errorf("update file manager error: %v, config: %v", err, config)
 				logManagers[config.Name].close()
