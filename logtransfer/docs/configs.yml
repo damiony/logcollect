@@ -1,0 +1,10 @@
+---
+logtransfer:
+  etcd:
+    root: /logcollects
+    basename: logtransfer.json
+    endpoints:
+      - 10.1.3.95:12379
+      - 10.1.3.95:22379
+      - 10.1.3.95:32379
+    dialtimeout: 10

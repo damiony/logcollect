@@ -1,0 +1,10 @@
+---
+logagent:
+  etcd:
+    root: "/logcollects"
+    basename: "logagent.json"
+    endpoints:
+      - localhost:12379
+      - localhost:22379
+      - localhost:32379
+    dialtimeout: 10
