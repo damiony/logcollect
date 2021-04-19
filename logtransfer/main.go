@@ -47,7 +47,6 @@ func main() {
 	// 初始化服务
 	services.InitManagers()
 
-	defer services.CloseManagers()
 	// 监听配置变化
 	conf.WatchEtcd(services.UpdateManagers)
 }
